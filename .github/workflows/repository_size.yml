@@ -1,22 +1,20 @@
 name: repository size
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-  workflow_dispatch:
+on: [push, workflow_dispatch]
 
 jobs:
-  build:
+  tests:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Branch name
-      - run: echo $(git branch --show-current)
+        run: |
+          echo $(git branch --show-current)
 
-      # - name: branch size
-      # - run: du -skh --exclude=".git"
+      - name: branch size
+        run: |
+          du -skh --exclude=".git"

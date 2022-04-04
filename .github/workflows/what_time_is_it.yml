@@ -1,19 +1,15 @@
 name: what time is it
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-  workflow_dispatch:
+on: [push, workflow_dispatch]
 
 jobs:
-  build:
+  tests:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
-      - name: run date
+      - name: date
         run: date
