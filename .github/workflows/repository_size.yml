@@ -12,8 +12,7 @@ jobs:
           fetch-depth: 0
 
       - name: Branch name
-        run: |
-          echo $(git branch --show-current)
+        run: echo $(git branch --show-current)
 
       - name: branch size
         run: |
