@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v3
       - id: clean
         run: |
-          UNWANTED_FILES=$(find . -type -not -path "./git/*" -wholename "*/tmp*" -or -name "*.o" -or -name "*.a" -or -name "*.gcno" -or -name "*.gcda" -or -name "*gcov" -or -name "*pain_au_chocolat*")
+          UNWANTED_FILES=$(find . -type f -not -path "./git/*" -wholename "*/tmp*" -or -name "*.o" -or -name "*.a" -or -name "*.gcno" -or -name "*.gcda" -or -name "*gcov" -or -name "*pain_au_chocolat*")
           for FILE  in $UNWANTED_FILES; do
             echo "::error file=${FILE#./}, title=Unwanted file detected::${FILE#./}"
           done
