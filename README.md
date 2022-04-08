@@ -1,2 +1,0 @@
-# chocolatine
-chocolatine project
