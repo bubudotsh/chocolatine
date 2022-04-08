@@ -19,6 +19,6 @@ fclean: clean
 	$(MAKE) $(NAME)
 	$(MAKE) -C ./lib/my fclean
 	$(RM) libmy.a
-	rm -f a.out
+	rm -f sah
 
 re: 	fclean all
