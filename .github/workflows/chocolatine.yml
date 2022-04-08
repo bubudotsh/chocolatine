@@ -10,9 +10,9 @@ on:
 
 env:
   MIRROR_URL: "git@github.com:EpitechPromo2026/B-DOP-200-NCY-2-1-chocolatine-hugo.bunelier.git"
-  EXECUTABLES: "sah"
-
+  EXECUTABLES: "lib/my/libmy.a"
 jobs:
+
   check_repository_cleanliness:
     name: "check_repository_cleanliness"
     runs-on: ubuntu-latest
@@ -21,7 +21,8 @@ jobs:
       - id: clean
         run: |
           UNWANTED_FILES=$(find . -type f -not -path "./git/*" -wholename "*/tmp*" -or -name "*.o" -or -name "*.a" -or -name "*.gcno" -or -name "*.gcda" -or -name "*gcov" -or -name "*pain_au_chocolat*")
-          for FILE  in $UNWANTED_FILES; do
+          for FILE
+           in $UNWANTED_FILES; do
             echo "::error file=${FILE#./}, title=Unwanted file detected::${FILE#./}"
           done
           if [[ -z "$UNWATED_FILES" ]]
@@ -49,9 +50,9 @@ jobs:
       - run: |
             if [ -f $EXECUTABLES ]
             then
-                echo "ok"
+                do
             else
-                echo "no"
+                done
             fi
 
 
