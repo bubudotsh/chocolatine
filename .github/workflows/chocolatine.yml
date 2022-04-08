@@ -65,8 +65,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: run_tests
-      run: make tests_run
-      timeout-minutes: 2
+        run: make tests_run
+        timeout-minutes: 2
 
 
 
