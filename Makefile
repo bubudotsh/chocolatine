@@ -13,7 +13,7 @@ all:
 clean:
 	$(RM) ./lib/my/*~
 	$(MAKE) -C ./lib/my clean
-	gcc main.c libmy.a
+	gcc -o sah main.c libmy.a
 
 fclean: clean
 	$(MAKE) $(NAME)
