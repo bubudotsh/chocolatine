@@ -36,7 +36,7 @@ jobs:
   check_program_compilation:
     needs: [ check_repository_cleanliness ]
     name: "check_program_compilation"
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     container:
       image: epitechcontent/epitest-docker:latest
 
@@ -58,7 +58,7 @@ jobs:
   run_tests:
     needs: [ check_program_compilation ]
     name: "run_tests"
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     container:
       image: epitechcontent/epitest-docker:latest
 
